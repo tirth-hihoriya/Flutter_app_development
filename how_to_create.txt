@@ -1,0 +1,10 @@
+>flutter create <app_name>
+
+
+e.g.
+>flutter create my_new_app
+
+
+
+
+>
