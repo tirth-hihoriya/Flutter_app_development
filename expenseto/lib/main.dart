@@ -30,13 +30,12 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
         // backgroundColor: Colors.black,
         appBar: AppBar(
-          backgroundColor: Colors.orange[900],
+          backgroundColor: Colors.cyan,
           title: Text('Expenseto by Tirth Hihoriya'),
         ),
         body:
-        //  SingleChildScrollView(
-        //           child:
-                   Column(
+         SingleChildScrollView(
+                  child: Column(
             //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -52,6 +51,6 @@ class MyHomePage extends StatelessWidget {
           UserTransactions(),
             ],
           ),
-        );
+        ));
   }
 }
