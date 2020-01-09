@@ -36,8 +36,7 @@ class _UserTransactionsState extends State<UserTransactions> {
     
   }
 
-  
-  
+ 
 
   @override
   Widget build(BuildContext context) {
