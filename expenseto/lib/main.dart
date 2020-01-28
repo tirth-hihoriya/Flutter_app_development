@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.green[700],
           accentColor: Colors.deepOrange,
           fontFamily: 'Quicksand',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                title: TextStyle(fontFamily: 'OpenSans', fontSize: 18, fontWeight: FontWeight.bold)),
           appBarTheme: AppBarTheme(
             textTheme: ThemeData.light().textTheme.copyWith(
                 title: TextStyle(fontFamily: 'OpenSans', fontSize: 20, fontWeight: FontWeight.bold)),
@@ -37,18 +39,18 @@ class _MyHomePageState extends State<MyHomePage> {
   // final titlecontroller = TextEditingController();
   // final amountController = TextEditingController();
   final List<Transaction> _userTransactions = [
-    Transaction(
-      id: 't1',
-      title: 'Petrol',
-      amount: 250.00,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Food',
-      amount: 125.50,
-      date: DateTime.now(),
-    ),
+    // Transaction(
+    //   id: 't1',
+    //   title: 'Petrol',
+    //   amount: 250.00,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: 'Food',
+    //   amount: 125.50,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   void _addNewTransaction(String txTitle, double txAmount) {
@@ -84,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // backgroundColor: Colors.cyan[900],
         title: Text('Expenseto by Tirth Hihoriya',
-            style: TextStyle(fontFamily: 'Open Sans')),
+            style: TextStyle(fontFamily: 'OpenSans')),
         actions: <Widget>[
           IconButton(
             icon: Icon(
