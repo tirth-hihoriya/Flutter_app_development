@@ -14,7 +14,7 @@ class TransactionList extends StatelessWidget {
       child: ListView.builder(     // we use it when items are more in list (more efficient than `Listview`)
         itemBuilder: (context, index) {
           return Card(
-            color: Colors.black,
+            color: Colors.blueGrey[800],
             child: Container(
               //color: Colors.purple,
               child: Row(
@@ -24,7 +24,7 @@ class TransactionList extends StatelessWidget {
                     margin: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                     decoration: BoxDecoration(
                         border: Border.all(
-                      color: Colors.orange,
+                      color: Theme.of(context).primaryColor,     //color: Color(0xffaaff00),
                       width: 2,
                     )),
                     padding: EdgeInsets.all(10),
@@ -33,7 +33,8 @@ class TransactionList extends StatelessWidget {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
-                          color: Colors.orange),
+                          color: Theme.of(context).primaryColor,
+                          ),
                     ),
                   ),
                   Column(
