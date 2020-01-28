@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import './widgets/new_transaction.dart';
@@ -12,11 +11,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        // backgroundColor: Colors.blue,
-        primaryColor: Colors.green[700],
-        accentColor: Colors.deepOrange
-        
-        ),
+          // backgroundColor: Colors.blue,
+          primaryColor: Colors.green[700],
+          accentColor: Colors.deepOrange,
+          fontFamily: 'Quicksand',
+          appBarTheme: AppBarTheme(
+            textTheme: ThemeData.light().textTheme.copyWith(
+                title: TextStyle(fontFamily: 'OpenSans', fontSize: 20, fontWeight: FontWeight.bold)),
+          )),
       title: 'Expenseto',
       home: MyHomePage(),
     );
@@ -34,11 +36,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   // final titlecontroller = TextEditingController();
   // final amountController = TextEditingController();
-final List<Transaction> _userTransactions = [
-Transaction(
+  final List<Transaction> _userTransactions = [
+    Transaction(
       id: 't1',
       title: 'Petrol',
-      amount: 250.00,  
+      amount: 250.00,
       date: DateTime.now(),
     ),
     Transaction(
@@ -51,17 +53,18 @@ Transaction(
 
   void _addNewTransaction(String txTitle, double txAmount) {
     final newTx = Transaction(
-        title: txTitle,
-        amount: txAmount,
-        date: DateTime.now(),
-        id: DateTime.now().toString(),
-        );
+      title: txTitle,
+      amount: txAmount,
+      date: DateTime.now(),
+      id: DateTime.now().toString(),
+    );
 
     setState(() {
       _userTransactions.add(newTx);
     });
   }
-  void _startAddNewTransaction(BuildContext ctx){
+
+  void _startAddNewTransaction(BuildContext ctx) {
     showModalBottomSheet(
       context: ctx,
       builder: (_) {
@@ -80,7 +83,8 @@ Transaction(
       //  backgroundColor: Colors.black,
       appBar: AppBar(
         // backgroundColor: Colors.cyan[900],
-        title: Text('Expenseto by Tirth Hihoriya'),
+        title: Text('Expenseto by Tirth Hihoriya',
+            style: TextStyle(fontFamily: 'Open Sans')),
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -109,10 +113,10 @@ Transaction(
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat ,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed:() => _startAddNewTransaction(context),
+        onPressed: () => _startAddNewTransaction(context),
         backgroundColor: Theme.of(context).accentColor,
       ),
     );
