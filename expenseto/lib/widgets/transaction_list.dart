@@ -29,7 +29,6 @@ class TransactionList extends StatelessWidget {
               // we use it when items are more in list (more efficient than `Listview`)
               itemBuilder: (context, index) {
                 return Card(
-                  
                   margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
                   child: ListTile(
                     leading: CircleAvatar(
@@ -38,7 +37,7 @@ class TransactionList extends StatelessWidget {
                             padding: EdgeInsets.all(6),
                             child: FittedBox(
                                 child:
-                                    Text('\₹${transactions[index].amount}')))),
+                                    Text('\₹ ${transactions[index].amount}')))),
                     title: Text(transactions[index].title,
                         style: Theme.of(context).textTheme.title),
                     subtitle: Text(
