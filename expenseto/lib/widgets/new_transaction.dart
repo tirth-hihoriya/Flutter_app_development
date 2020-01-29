@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -82,7 +84,7 @@ class _NewTransactionState extends State<NewTransaction> {
                 children: <Widget>[
                   Text(_selectedDate==null? 'No Date Choosen': DateFormat.yMMMEd().format(_selectedDate)  ),
                   FlatButton(
-                    textColor: Theme.of(context).primaryColor,
+                    textColor: Theme.of(context).errorColor,
                     child: Text(
                       'Choose Date' ,
                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -94,13 +96,16 @@ class _NewTransactionState extends State<NewTransaction> {
             ),
             RaisedButton(
               child: Text('Add Transaction'),
+              
               onPressed: () {
                 print(_titleController.text); // print(titleInput);
                 print(_amountController.text);
                 _submitData();
               },
-              color: Theme.of(context).primaryColor,
-              textColor: Theme.of(context).textTheme.button.color,
+              
+              color: Theme.of(context).accentColor,
+              textColor: Colors.white,
+              padding: EdgeInsets.all(15),
             ),
           ],
         ),
